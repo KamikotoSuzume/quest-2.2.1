@@ -14,8 +14,9 @@ import javax.persistence.TypedQuery;
 public class CarDaoImp implements CarDao {
 
     private SessionFactory sessionFactory;
+
     @Autowired
-    public CarDaoImp (SessionFactory sessionFactory) {
+    public CarDaoImp(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 

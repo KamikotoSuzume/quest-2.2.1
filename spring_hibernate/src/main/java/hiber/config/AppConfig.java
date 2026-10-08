@@ -25,6 +25,7 @@ public class AppConfig {
 
 
    private Environment env;
+
    @Autowired
    public AppConfig(Environment env) {
       this.env = env;
@@ -44,8 +45,8 @@ public class AppConfig {
    public LocalSessionFactoryBean getSessionFactory() {
       LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
       factoryBean.setDataSource(getDataSource());
-      
-      Properties props=new Properties();
+
+      Properties props = new Properties();
       props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 

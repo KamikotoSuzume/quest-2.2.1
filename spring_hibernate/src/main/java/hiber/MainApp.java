@@ -12,8 +12,8 @@ import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
+      AnnotationConfigApplicationContext context =
+              new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
       CarService carService = context.getBean(CarService.class);
@@ -27,11 +27,11 @@ public class MainApp {
 
       List<User> users = userService.listUsers();
       for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         if(user.getCar() != null) {
+         System.out.println("Id = " + user.getId());
+         System.out.println("First Name = " + user.getFirstName());
+         System.out.println("Last Name = " + user.getLastName());
+         System.out.println("Email = " + user.getEmail());
+         if (user.getCar() != null) {
             System.out.println("Car = " + user.getCar().getModel() + " " + user.getCar().getSeries());
          }
          System.out.println();
@@ -39,10 +39,10 @@ public class MainApp {
 
       User user = carService.getUserByCar("BMW", 5);
       System.out.println("Результат поиска по: " + user.getCar().getModel() + " " + user.getCar().getSeries());
-      System.out.println("Id = "+user.getId());
-      System.out.println("First Name = "+user.getFirstName());
-      System.out.println("Last Name = "+user.getLastName());
-      System.out.println("Email = "+user.getEmail());
+      System.out.println("Id = " + user.getId());
+      System.out.println("First Name = " + user.getFirstName());
+      System.out.println("Last Name = " + user.getLastName());
+      System.out.println("Email = " + user.getEmail());
 
       context.close();
    }

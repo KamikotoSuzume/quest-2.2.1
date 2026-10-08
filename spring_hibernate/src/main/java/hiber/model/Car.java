@@ -17,9 +17,10 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    public Car(){}
+    public Car() {
+    }
 
-    public Car (String model, int series) {
+    public Car(String model, int series) {
         this.model = model;
         this.series = series;
     }
@@ -41,7 +42,7 @@ public class Car {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
@@ -52,7 +53,7 @@ public class Car {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(id, model, series);
     }
 }
