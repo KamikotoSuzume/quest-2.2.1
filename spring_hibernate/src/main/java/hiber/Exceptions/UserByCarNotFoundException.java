@@ -1,4 +1,9 @@
 package hiber.Exceptions;
 
-public class HaveNotCar {
+public class UserByCarNotFoundException extends RuntimeException {
+
+    public UserByCarNotFoundException(String message) {
+        super(message);
+    }
 }
+
